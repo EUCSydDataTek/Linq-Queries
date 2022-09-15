@@ -1,5 +1,6 @@
-﻿// 1. Lav en LINQ query med Where og en tilhørende iteration
-// 2. Lav egen LINQ operator kaldet Filter i en ny klasse kaldet MyLinq
+﻿// 1. Nu benyttes Count() til at fortælle antallet af Movie-objekter i querien.
+//      Men bemærk at collectionen nu gennemløbes 2 gange!
+// 2. Dette kan undgås ved at lave en Immediate Execution vha. ToList().
 
 
 using LinqQueries;
