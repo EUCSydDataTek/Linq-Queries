@@ -1,5 +1,9 @@
-﻿// 1. Lav en LINQ query med Where og en tilhørende iteration
-// 2. Lav egen LINQ operator kaldet Filter i en ny klasse kaldet MyLinq
+﻿// 1. Foreach erstattes med en mere explicit udgave med en enumerator
+// 2. Der laves en debug, som tydeligt viser princippet i Deferred Execution.
+//      Bemærk at det er først ved MoveNext() at filter-metoden rammes!
+// 3. Querien udvides med Take(1). Bemærk hvor lidt arbejde der udføres.
+// 4. Querien kan sammenkædes fra flere lag eller forskellige tidspunkter.
+//      Dette er vist ved at bryde query op i to linjer.
 
 
 using LinqQueries;
