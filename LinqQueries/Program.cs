@@ -21,7 +21,17 @@ namespace Queries
                 new Movie { Title = "The King's Speech", Rating = 8.0f, Year = 2010 }
             };
 
-            var query = movies.Filter(m => m.Year > 2000);//.ToList();
+            var query = Enumerable.Empty<Movie>();
+
+            try
+            {
+                query = movies.Filter(m => m.Year > 2000);//.ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             Console.WriteLine(query.Count());
 
             var enumerator = query.GetEnumerator();
