@@ -1,5 +1,7 @@
-﻿// 1. Lav en LINQ query med Where og en tilhørende iteration
-// 2. Lav egen LINQ operator kaldet Filter i en ny klasse kaldet MyLinq
+﻿// 1. Nu erstattes ToList() med OrderByDescending(). Bemærk at den først kan lave sortering
+//      efter at have gennemløbet hele collectionen.
+// 2. Udkommenter iterationen for at vise at den stadig har Deferred Execution. Køres ikke.
+// 3. Rækkefølgen betyder meget når man har non-streaming operators indblandet.
 
 
 using LinqQueries;
@@ -21,18 +23,8 @@ namespace Queries
                 new Movie { Title = "The King's Speech", Rating = 8.0f, Year = 2010 }
             };
 
-            var query = Enumerable.Empty<Movie>();
 
-            try
-            {
-                query = movies.Filter(m => m.Year > 2000);//.ToList();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            Console.WriteLine(query.Count());
+            var query = movies.Filter(m => m.Year > 2000).OrderByDescending(m => m.Rating);
 
             var enumerator = query.GetEnumerator();
             while (enumerator.MoveNext())
