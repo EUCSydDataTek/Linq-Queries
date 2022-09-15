@@ -24,9 +24,13 @@ namespace Queries
             //var query = movies.Where(m => m.Year > 2000);
             var query = movies.Filter(m => m.Year > 2000);
 
-            foreach (Movie movie in query)
+            // later
+            query = query.Take(1);
+
+            var enumerator = query.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                Console.WriteLine(movie.Title);
+                Console.WriteLine(enumerator.Current.Title);
             }
         }
     }

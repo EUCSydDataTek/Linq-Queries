@@ -16,11 +16,9 @@ namespace LinqQueries
             {
                 if (predicate(item))
                 {
-                    //result.Add(item);
                     yield return item;
                 }
             }
-            //return result;
         }
     }
 }
