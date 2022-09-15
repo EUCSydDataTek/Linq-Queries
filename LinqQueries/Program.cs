@@ -1,5 +1,8 @@
-﻿// 1. Lav en LINQ query med Where og en tilhørende iteration
-// 2. Lav egen LINQ operator kaldet Filter i en ny klasse kaldet MyLinq
+﻿// 1. En Exception kastes i Movie-klassen.
+// 2. En query exekveres med ToLIst() i en Try-block og det fungerer fint.
+// 3. Nu fjernes ToList() og ingen Exception bliver håndteret. Fordi det kun
+//      kun er querien, der er inde i Try-blokken - og det er ikke noget værd.
+//      Man skal placere den linje hvor querien eksekveres i en Try-blok!
 
 
 using LinqQueries;
